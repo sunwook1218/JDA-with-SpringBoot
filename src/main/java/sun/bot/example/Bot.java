@@ -18,7 +18,7 @@ public class Bot extends ListenerAdapter
             System.out.println("You have to provide a token as first argument!");
             System.exit(1);
         }
-        JDABuilder.createLight(KeyConstants.APPLICATION_KEY, GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+        JDABuilder.createLight("key here", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
                 .addEventListeners(new Bot())
                 .setActivity(Activity.playing("Type !ping"))
                 .build();

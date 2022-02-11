@@ -38,7 +38,7 @@ public class AudioEchoExample extends ListenerAdapter
     public static void main(String[] args) throws LoginException
     {
 
-        String token = KeyConstants.APPLICATION_KEY;
+        String token = "key here";
 
         // We only need 2 gateway intents enabled for this example:
         EnumSet<GatewayIntent> intents = EnumSet.of(

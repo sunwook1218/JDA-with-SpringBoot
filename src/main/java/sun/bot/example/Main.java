@@ -10,9 +10,9 @@ import javax.security.auth.login.LoginException;
 public class Main extends ListenerAdapter {
 
     public static void main(String[] args) throws LoginException {
-        JDA jda= JDABuilder.createDefault(KeyConstants.APPLICATION_KEY).build();
-
-        jda.addEventListener(new Main());
+//        JDA jda= JDABuilder.createDefault(KeyConstants.APPLICATION_KEY).build();
+//
+//        jda.addEventListener(new Main());
     }
 
     @Override

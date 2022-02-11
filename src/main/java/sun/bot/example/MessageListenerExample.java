@@ -38,7 +38,7 @@ public class MessageListenerExample extends ListenerAdapter
         //We construct a builder for our bot.
         try
         {
-            JDA jda = JDABuilder.createDefault(KeyConstants.APPLICATION_KEY) // The token of the account that is logging in.
+            JDA jda = JDABuilder.createDefault("key here") // The token of the account that is logging in.
                     .addEventListeners(new MessageListenerExample())   // An instance of a class that will handle events.
                     .build();
             jda.awaitReady(); // Blocking guarantees that JDA will be completely loaded.

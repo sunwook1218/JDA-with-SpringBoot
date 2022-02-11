@@ -4,35 +4,21 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import sun.bot.core.domain.character.Character;
+import sun.bot.core.domain.character.CharacterMapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Scrap {
+public class ScrapUtil {
 
-    public static Map<String, String> scrapCharacter(String characterName) {
+    public static Character character(String characterName) throws Exception {
 
-        Map<String, String> result = new HashMap<>();
+            Document document = Jsoup.connect("https://loawa.com/char/" + characterName).get();
 
-        try {
-            Document doc = Jsoup.connect("https://loawa.com/char/" + characterName).get();
-
-            String text = doc.select(".char-info dd").text();
-
-            result.put("document", doc.text());
-            result.put("level", text);
-
-        } catch(Exception e) {
-
-            result.put("exception", e.getMessage());
-
-        }
-
-        return result;
-
-
+            return CharacterMapper.documentToCharacter(document);
     }
 
     public static Map<String, Object> best(Integer number) {
