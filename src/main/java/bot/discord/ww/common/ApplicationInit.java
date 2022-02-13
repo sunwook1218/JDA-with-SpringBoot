@@ -21,7 +21,7 @@ public class ApplicationInit {
     @PostConstruct
     public void init() throws Exception {
 
-        String keypath = System.getProperty("keypath", "C:\\Key\\key.txt");
+        String keypath = System.getProperty("keypath", "/home/ubuntu/key/key.txt");
 
         Path fileName = Path.of(keypath);
         String key = Files.readString(fileName);
