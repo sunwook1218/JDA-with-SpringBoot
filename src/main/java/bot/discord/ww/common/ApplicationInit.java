@@ -21,7 +21,9 @@ public class ApplicationInit {
     @PostConstruct
     public void init() throws Exception {
 
-        Path fileName = Path.of("C:\\Key\\key.txt");
+        String keypath = System.getProperty("keypath", "C:\\Key\\key.txt");
+
+        Path fileName = Path.of(keypath);
         String key = Files.readString(fileName);
 
         JDA jda = JDABuilder.createDefault(key).build();
