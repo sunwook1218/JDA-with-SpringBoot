@@ -6,17 +6,19 @@ import bot.discord.ww.core.domain.island.Island;
 import bot.discord.ww.core.domain.island.IslandMapper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ScrapService {
 
-    @Autowired
-    private CharacterMapper characterMapper;
+    private final CharacterMapper characterMapper;
 
-    @Autowired
-    private IslandMapper islandMapper;
+    private final IslandMapper islandMapper;
+
+    public ScrapService(CharacterMapper characterMapper, IslandMapper islandMapper) {
+        this.characterMapper = characterMapper;
+        this.islandMapper = islandMapper;
+    }
 
     /**
      * ScrapUtil do Search lostArk data infos from https://loawa.com/ and it provides java object by mapping document data

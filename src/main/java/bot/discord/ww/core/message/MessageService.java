@@ -11,17 +11,19 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MessageService extends BaseService {
 
-    @Autowired
-    private ScrapService scrapService;
+    private final ScrapService scrapService;
 
-    @Autowired
-    private EmbedMapper embedMapper;
+    private final EmbedMapper embedMapper;
+
+    public MessageService(ScrapService scrapService, EmbedMapper embedMapper) {
+        this.scrapService = scrapService;
+        this.embedMapper = embedMapper;
+    }
 
     public void service(MessageReceivedEvent event) throws Exception {
 

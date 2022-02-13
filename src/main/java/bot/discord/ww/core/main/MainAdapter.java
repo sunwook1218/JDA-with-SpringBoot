@@ -6,7 +6,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,8 +13,11 @@ public class MainAdapter extends ListenerAdapter {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
-    private MessageService messageService;
+    private final MessageService messageService;
+
+    public MainAdapter(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {

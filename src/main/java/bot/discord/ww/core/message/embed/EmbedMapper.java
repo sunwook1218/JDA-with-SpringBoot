@@ -45,8 +45,6 @@ public class EmbedMapper {
         eb.addField("각인", character.getAengraveForEmbedField(), false);
         eb.addField("보석", character.getJewelForEmbedField(), false);
 
-        eb.addBlankField(false);
-
         return eb.build();
     }
 
