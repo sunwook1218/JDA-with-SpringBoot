@@ -62,10 +62,8 @@ public class MessageService extends BaseService {
 
         } else {
 
-            if(contentRaw.endsWith("ww")) {
-
+            if(contentRaw.endsWith("ww") && !contentRaw.equals(CommonStrings.WWWW)) {
                 end_ww_response(event);
-
             }
 
 
@@ -77,8 +75,7 @@ public class MessageService extends BaseService {
     }
 
     private void end_ww_response(MessageReceivedEvent event) {
-
-        event.getChannel().sendMessage("이녀석 정신이 나가버린 wwwww").queue();
+        event.getChannel().sendMessage(CommonStrings.WWWW).queue();
     }
 
     private void character_response(MessageReceivedEvent event, String content) throws Exception {
