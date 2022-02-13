@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletContext;
 import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
 @Component
 public class MessageScheduler {
@@ -29,8 +31,10 @@ public class MessageScheduler {
     @Scheduled(cron = "0 55 * * * *")
     public void sendMessage() {
 
-        int dayOfWeek = Calendar.DAY_OF_WEEK;
-        int hourOfDay = Calendar.HOUR_OF_DAY;
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Seoul"), Locale.KOREA);
+
+        int dayOfWeek = calendar.DAY_OF_WEEK;
+        int hourOfDay = calendar.HOUR_OF_DAY;
 
         if(dayOfWeek == 1 || dayOfWeek == 7) {
             if(11 <= hourOfDay || hourOfDay <= 24) {
