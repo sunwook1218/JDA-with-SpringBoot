@@ -93,7 +93,7 @@ public class MessageService extends BaseService {
 
         Island island = scrapService.getIsland();
 
-        event.getChannel().sendMessage(CommonStrings.waiting).queue(message -> {
+        event.getChannel().sendMessage(CommonStrings.WAITING).queue(message -> {
             message.editMessageFormat("다음 시작 : %s | 남은 시간 : %s", island.getNextStartTime(), island.getTimeToNextStart()).queue();
         });
 
