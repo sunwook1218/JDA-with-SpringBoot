@@ -11,7 +11,7 @@ import java.awt.*;
 @Component
 public class EmbedMapper {
 
-    private <T> MessageEmbed usage(T object) {
+    public <T> MessageEmbed usage(T object) {
 
         EmbedBuilder eb = new EmbedBuilder();
 
@@ -41,7 +41,9 @@ public class EmbedMapper {
         eb.setColor(new Color(0xF40C0C));
         eb.setColor(new Color(255, 0, 54));
 
-        eb.addField("Title of field", character.toString(), false);
+        eb.addField("캐릭터 정보", character.getInfoForEmbedField(), false);
+        eb.addField("각인", character.getAengraveForEmbedField(), false);
+        eb.addField("보석", character.getJewelForEmbedField(), false);
 
         eb.addBlankField(false);
 

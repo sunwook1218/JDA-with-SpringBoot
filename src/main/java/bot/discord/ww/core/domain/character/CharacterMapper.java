@@ -55,10 +55,14 @@ public class CharacterMapper {
             }
         }
 
-        Elements aengraveListElements = document.select(".char-equip-aengrave div img");
+        Elements aengraveListElements = document.select(".char-equip-aengrave div");
 
         List<String> collect = aengraveListElements.stream().map(ele -> ele.text().replace("&nbsp;", "")).collect(Collectors.toList());
         builder.equipAengraveList(collect);
+
+        Elements jewelListElements = document.select(".char-jewel-wrap img");
+        List<String> jewelList = jewelListElements.stream().map(ele -> ele.attr("aria-label")).collect(Collectors.toList());
+        builder.jewelList(jewelList);
 
         return builder.build();
     }
