@@ -1,4 +1,4 @@
-package bot.discord.ww.core.domain.character;
+package bot.discord.ww.core.message.domain.character;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

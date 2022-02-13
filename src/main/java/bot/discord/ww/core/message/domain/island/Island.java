@@ -1,4 +1,4 @@
-package bot.discord.ww.core.domain.island;
+package bot.discord.ww.core.message.domain.island;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

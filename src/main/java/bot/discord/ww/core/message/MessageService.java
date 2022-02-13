@@ -3,8 +3,8 @@ package bot.discord.ww.core.message;
 import bot.discord.ww.common.BaseService;
 import bot.discord.ww.common.JDAContextHolder;
 import bot.discord.ww.common.string.CommonStrings;
-import bot.discord.ww.core.domain.character.Character;
-import bot.discord.ww.core.domain.island.Island;
+import bot.discord.ww.core.message.domain.character.Character;
+import bot.discord.ww.core.message.domain.island.Island;
 import bot.discord.ww.core.message.embed.EmbedMapper;
 import bot.discord.ww.core.search.ScrapService;
 import net.dv8tion.jda.api.entities.MessageEmbed;
@@ -52,16 +52,21 @@ public class MessageService extends BaseService {
 
             if(command.equals("s")) {
 
-                characterResponse(event, content);
+                character_response(event, content);
             }
 
             if(command.equals("섬")) {
 
-                islandResponse(event);
+                island_response(event);
             }
 
         } else {
 
+            if(contentRaw.endsWith("ww")) {
+
+                end_ww_response(event);
+
+            }
 
 
 
@@ -71,7 +76,12 @@ public class MessageService extends BaseService {
 
     }
 
-    private void characterResponse(MessageReceivedEvent event, String content) throws Exception {
+    private void end_ww_response(MessageReceivedEvent event) {
+
+        event.getChannel().sendMessage("이녀석 정신이 나가버린 wwwww").queue();
+    }
+
+    private void character_response(MessageReceivedEvent event, String content) throws Exception {
 
         Character character = scrapService.getCharacterByName(content);
         MessageEmbed messageEmbed = embedMapper.mkCharacterEmbed(character);
@@ -79,7 +89,7 @@ public class MessageService extends BaseService {
         event.getChannel().sendMessageEmbeds(messageEmbed).queue();
     }
 
-    private void islandResponse(MessageReceivedEvent event) throws Exception {
+    private void island_response(MessageReceivedEvent event) throws Exception {
 
         Island island = scrapService.getIsland();
 
