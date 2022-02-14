@@ -22,18 +22,44 @@ public class MainAdapter extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
 
+        if(event.getMessage().getContentRaw().startsWith("DEBUG")) {
+            debugMode(event);
+            return;
+        }
+
         try {
+
             messageService.service(event);
 
         } catch (Exception e) {
 
             event.getChannel().sendMessage(e.getMessage()).queue(message -> {
-                message.editMessageFormat("Error : %s", e.getMessage());
+                message.editMessageFormat("Error : %s", e.getMessage()).queue();
             });
 
-            e.printStackTrace();
         }
 
+    }
+
+    private void debugMode(MessageReceivedEvent event) {
+
+        try {
+
+            messageService.service(event);
+
+        } catch (Exception e) {
+
+            event.getChannel().sendMessage(e.getMessage()).queue(message -> {
+                message.editMessageFormat("Error : %s", e.getMessage()).queue();
+            });
+
+            for (StackTraceElement stackTraceElement : e.getStackTrace()) {
+
+                event.getChannel().sendMessage(stackTraceElement.toString()).queue();
+
+            }
+
+        }
 
     }
 }

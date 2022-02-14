@@ -27,13 +27,13 @@ public class MessageService extends BaseService {
 
     public void service(MessageReceivedEvent event) throws Exception {
 
-        String contentRaw = event.getMessage().getContentRaw();
+        String contentRaw = event.getMessage().getContentRaw().replaceAll("DEBUG ", "");
         User author = event.getAuthor();
 
         if(event.getChannel().getId().equals("940093794492248064")) {
             TextChannel tsuChannel = JDAContextHolder.getInstance().getJda().getTextChannelById("246804865005780993");
 
-            tsuChannel.sendMessage(event.getMessage().getContentRaw()).queue();
+            tsuChannel.sendMessage(contentRaw).queue();
         }
 
         if(contentRaw.startsWith("ww ")){

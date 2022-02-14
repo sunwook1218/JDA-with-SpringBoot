@@ -3,6 +3,7 @@ package bot.discord.ww.common;
 import bot.discord.ww.core.main.MainAdapter;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -18,12 +19,13 @@ public class ApplicationInit {
         this.mainAdapter = mainAdapter;
     }
 
+    @Value("${ww.env.key.path}")
+    private String keyPath;
+
     @PostConstruct
     public void init() throws Exception {
 
-        String keypath = System.getProperty("keypath", "/home/ubuntu/key/key.txt");
-
-        Path fileName = Path.of(keypath);
+        Path fileName = Path.of(keyPath);
         String key = Files.readString(fileName);
 
         JDA jda = JDABuilder.createDefault(key).build();
