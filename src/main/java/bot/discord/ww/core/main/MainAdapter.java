@@ -30,6 +30,8 @@ public class MainAdapter extends ListenerAdapter {
             event.getChannel().sendMessage(e.getMessage()).queue(message -> {
                 message.editMessageFormat("Error : %s", e.getMessage());
             });
+
+            e.printStackTrace();
         }
 
 

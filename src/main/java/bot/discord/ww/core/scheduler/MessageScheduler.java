@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletContext;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -38,10 +37,12 @@ public class MessageScheduler {
 
         if(dayOfWeek == 1 || dayOfWeek == 7) {
             if(11 <= hourOfDay || hourOfDay <= 24) {
+                logger.info("dayOfWeek : {}, hourOfDay : {}", dayOfWeek,  hourOfDay);
                 jda.getTextChannelById(ChannelId.TSU).sendMessage(jda.getUserById(UserId.MALAMUTE).getAsMention() + " 정각 5분 전입니다.").queue();
             }
         } else {
             if(19 <= hourOfDay || hourOfDay <= 24) {
+                logger.info("dayOfWeek : {}, hourOfDay : {}", dayOfWeek,  hourOfDay);
                 jda.getTextChannelById(ChannelId.TSU).sendMessage(jda.getUserById(UserId.MALAMUTE).getAsMention() + " 정각 5분 전입니다.").queue();
             }
         }
