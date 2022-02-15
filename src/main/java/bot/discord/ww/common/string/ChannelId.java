@@ -4,5 +4,6 @@ public class ChannelId {
 
     public static final String TSU = "246804865005780993";
     public static final String DEV = "941936677008584724";
+    public static final String PERSONAL = "940260122981171200";
 
 }

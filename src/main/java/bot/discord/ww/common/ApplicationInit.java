@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.ZoneId;
+import java.util.TimeZone;
 
 @Component
 public class ApplicationInit {
@@ -24,7 +26,15 @@ public class ApplicationInit {
 
     @PostConstruct
     public void init() throws Exception {
+        jdaConfiguration();
+        timezoneConfiguration();
+    }
 
+    private void timezoneConfiguration() {
+        TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of("Asia/Seoul")));
+    }
+
+    private void jdaConfiguration() throws Exception {
         Path fileName = Path.of(keyPath);
         String key = Files.readString(fileName);
 
