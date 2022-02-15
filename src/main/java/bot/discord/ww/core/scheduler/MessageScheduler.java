@@ -54,7 +54,18 @@ public class MessageScheduler {
     @Scheduled(cron = "0/30 * * * * *")
     public void sendImgIcon() throws Exception {
 
-        sendIconService.cute(null);
+        JDA jda = JDAContextHolder.getInstance().getJda();
+
+        jda.getUserById(UserId.MALAMUTE).openPrivateChannel().flatMap(privateChannel -> {
+            try {
+                sendIconService.cute(privateChannel);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }).queue();
+
+
 
     }
 
