@@ -1,4 +1,4 @@
-package bot.discord.ww.common;
+package bot.discord.ww.common.jda;
 
 import lombok.Data;
 import net.dv8tion.jda.api.JDA;

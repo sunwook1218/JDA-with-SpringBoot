@@ -1,4 +1,4 @@
-package bot.discord.ww.core.message.domain.boss;
+package bot.discord.ww.core.domain.boss;
 
 import org.springframework.stereotype.Component;
 

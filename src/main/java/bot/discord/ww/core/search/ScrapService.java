@@ -1,9 +1,9 @@
 package bot.discord.ww.core.search;
 
-import bot.discord.ww.core.message.domain.character.Character;
-import bot.discord.ww.core.message.domain.character.CharacterMapper;
-import bot.discord.ww.core.message.domain.island.Island;
-import bot.discord.ww.core.message.domain.island.IslandMapper;
+import bot.discord.ww.core.domain.character.Character;
+import bot.discord.ww.core.domain.character.CharacterMapper;
+import bot.discord.ww.core.domain.island.Island;
+import bot.discord.ww.core.domain.island.IslandMapper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package bot.discord.ww.core.message.icon;
 
-import bot.discord.ww.common.BaseService;
-import bot.discord.ww.common.JDAContextHolder;
+import bot.discord.ww.common.base.BaseService;
+import bot.discord.ww.common.jda.JDAContextHolder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import org.springframework.core.io.DefaultResourceLoader;

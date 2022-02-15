@@ -1,7 +1,7 @@
 package bot.discord.ww.core.message.embed;
 
-import bot.discord.ww.core.message.domain.character.Character;
-import bot.discord.ww.core.message.domain.island.Island;
+import bot.discord.ww.core.domain.character.Character;
+import bot.discord.ww.core.domain.island.Island;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import org.springframework.stereotype.Component;

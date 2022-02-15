@@ -1,6 +1,6 @@
 package bot.discord.ww.core.scheduler;
 
-import bot.discord.ww.common.JDAContextHolder;
+import bot.discord.ww.common.jda.JDAContextHolder;
 import bot.discord.ww.common.string.ChannelId;
 import bot.discord.ww.common.string.UserId;
 import bot.discord.ww.core.message.icon.SendIconService;

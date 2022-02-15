@@ -1,9 +1,9 @@
-package bot.discord.ww.common;
+package bot.discord.ww.common.base;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BaseService {
+public class BaseMapper {
 
     public Logger logger = LoggerFactory.getLogger(getClass());
 

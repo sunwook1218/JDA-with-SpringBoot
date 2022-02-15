@@ -1,6 +1,6 @@
-package bot.discord.ww.core.message.domain.island;
+package bot.discord.ww.core.domain.island;
 
-import bot.discord.ww.common.BaseMapper;
+import bot.discord.ww.common.base.BaseMapper;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Component;
