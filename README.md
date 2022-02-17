@@ -2,6 +2,15 @@
 
 summary
 
+
+## To be
+
+1. DEBUG state
+2. 동적 스케줄러 
+3. 통합 서치 기능
+4. Message UI 정리
+5. 이모지로 상호작용
+
 ## Usage 
 
 `ww command content`
