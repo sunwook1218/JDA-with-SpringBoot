@@ -10,6 +10,7 @@ summary
 3. 통합 서치 기능
 4. Message UI 정리
 5. 이모지로 상호작용
+6. Music bot
 
 ## Usage 
 
